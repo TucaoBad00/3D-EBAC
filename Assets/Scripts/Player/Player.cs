@@ -44,10 +44,14 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 speedVector *= runSpeed;
-                
+                animator.speed = runSpeed;
+            }
+            else
+            {
+                animator.speed = 1f;
             }
         }
-        animator.speed *= runSpeed;
+        
         vSpeed -= gravity * Time.deltaTime;
         speedVector.y = vSpeed;
         characterController.Move(speedVector * Time.deltaTime);
