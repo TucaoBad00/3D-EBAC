@@ -44,6 +44,7 @@ public class PlayerMoviment : MonoBehaviour
 }
 public class Moviment : StateBase
 {
+    public CharacterController characterController;
     PlayerMoviment player;
     public override void OnStateEnter(Object o = null)
     {
@@ -53,7 +54,7 @@ public class Moviment : StateBase
     public override void OnStateStay()
     {
         base.OnStateStay();
-        player.rigidbody.AddForce(new Vector3(player.speed * Input.GetAxis("Horizontal"), 0, player.speed * Input.GetAxis("Vertical")), ForceMode.Force);
+        var move = transform.forward * Input.GetAxis("Vertical") * player.speed;
     }
 }
 public class Jump : StateBase
