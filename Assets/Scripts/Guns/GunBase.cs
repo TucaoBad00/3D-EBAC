@@ -5,27 +5,11 @@ using UnityEngine;
 public class GunBase : MonoBehaviour
 {
     public ProjectileBase prefabProjectile;
-
     public Transform positionToShoot;
     public float timeBetweenShoot;
-
+    public float speed;
     private Coroutine _currentCoroutine;
-
-    public KeyCode keyCode = KeyCode.Z;
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(keyCode))
-        {
-            _currentCoroutine = StartCoroutine(StartShoot());
-        }
-        else if (Input.GetKeyUp(keyCode))
-        {
-            if (_currentCoroutine != null)
-                StopCoroutine(_currentCoroutine);
-        }
-    }
-    IEnumerator StartShoot()
+    protected virtual IEnumerator ShootCoroutine()
     {
         while(true)
         {
@@ -33,9 +17,22 @@ public class GunBase : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenShoot);
         }
     }
-    public void Shoot()
+    public void StartShoot()
+    {
+        StopShoot();
+        _currentCoroutine = StartCoroutine(ShootCoroutine());
+    }
+    public void StopShoot()
+    {
+            if (_currentCoroutine != null)
+                StopCoroutine(_currentCoroutine);
+
+    }
+    public virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
+        projectile.transform.rotation = positionToShoot.rotation;
+        projectile.speed = speed;
     }
 }

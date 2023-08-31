@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class ProjectileBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float timeToDestroy;
+    public int damageAmount;
+    public float speed;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
+    {
+        Destroy(gameObject, timeToDestroy);
+    }
+    private void Update()
+    {
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+    private void OnCollisionEnter(Collision collision)
     {
         
     }
