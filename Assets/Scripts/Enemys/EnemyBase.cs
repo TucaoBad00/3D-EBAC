@@ -9,7 +9,8 @@ namespace Enemy
     {
 
         public AnimationManager animationManager;
-        public float startLife;
+        public float startLife = 10f;
+        public FlashColor flashColor;
         [SerializeField]private float _currentLife;
 
         private void Awake()
@@ -32,6 +33,10 @@ namespace Enemy
         }
         public void OnDamage(float f)
         {
+            if(flashColor != null)
+            {
+                flashColor.Flash();
+            }
             _currentLife -= f;
             if(_currentLife <= 0)
             {

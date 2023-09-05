@@ -12,22 +12,25 @@ public class Player : MonoBehaviour, IDamageble
     public float jumpSpeed;
     public CharacterController characterController;
     public Animator animator;
-
+    public Health health;
 
     private bool isWalking;
     private float vSpeed = 0f;
 
+    private void Awake()
+    {
+        OnValidate();
+        //health.OnDamage += Damage;
+    }
+    private void OnValidate()
+    {
+        if (health == null) health = GetComponent<Health>();
+    }
     public void Damage(float damage)
     {
         throw new System.NotImplementedException();
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(0, Input.GetAxis("Horizontal")*rotateSpeed*Time.deltaTime, 0);
