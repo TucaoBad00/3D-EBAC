@@ -2426,7 +2426,7 @@ MonoBehaviour:
   startAnimationEase: 27
   attackAmount: 5
   timeBetweenAttacks: 0.5
-  health: {fileID: 0}
+  health: {fileID: 505778049}
   speed: 10
   waypoints:
   - {fileID: 1160492511}
@@ -5272,7 +5272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934293700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10451022, y: 0.000000016820914, z: -0.0000000017676369, w: 0.9945238}
+  m_LocalRotation: {x: 0.104510225, y: 0.0000000060124306, z: -6.3182043e-10, w: 0.9945238}
   m_LocalPosition: {x: 411.08002, y: -0.5, z: 41.260002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8258,7 +8258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10451022, y: 0.000000016820914, z: -0.0000000017676369, w: 0.9945238}
+  m_LocalRotation: {x: 0.104510225, y: 0.0000000060124306, z: -6.3182043e-10, w: 0.9945238}
   m_LocalPosition: {x: 411.08002, y: -0.5, z: 41.260002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
