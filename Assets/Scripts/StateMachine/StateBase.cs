@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StateBase : MonoBehaviour
 {
-    public virtual void OnStateEnter(Object o = null)
+    public virtual void OnStateEnter(params object[] objs)
     {
 
     }

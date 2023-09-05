@@ -47,5 +47,13 @@ namespace Enemy
         {
             OnDamage(damage);
         }
+        public void OnCollisionEnter(Collision collision)
+        {
+            Player p = collision.transform.GetComponent<Player>();
+            if(p = null)
+            {
+                p.Damage(1);
+            }
+        }
     }
 }

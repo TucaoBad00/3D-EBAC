@@ -46,7 +46,7 @@ public class Moviment : StateBase
 {
     public CharacterController characterController;
     PlayerMoviment player;
-    public override void OnStateEnter(Object o = null)
+    public override void OnStateEnter(params object[] objs)
     {
         base.OnStateEnter(player);
 

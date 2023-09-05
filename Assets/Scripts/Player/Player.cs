@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageble
 {
     [Header("MOVIMENTO")]
     public float speed;
@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
 
     private bool isWalking;
     private float vSpeed = 0f;
+
+    public void Damage(float damage)
+    {
+        throw new System.NotImplementedException();
+    }
 
     void Start()
     {
