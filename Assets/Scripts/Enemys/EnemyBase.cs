@@ -55,7 +55,7 @@ namespace Enemy
         public void OnCollisionEnter(Collision collision)
         {
             Health p = collision.transform.GetComponent<Health>();
-            if(p = null)
+            if(p != null)
             {
                 p.IDamage(1);
             }
