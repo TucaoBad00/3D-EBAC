@@ -155,7 +155,7 @@ MonoBehaviour:
   damageAmount: 1
   speed: 100
   tagsToShoot:
-  - Enemys
+  - Enemy
 --- !u!54 &-3548542937161569282
 Rigidbody:
   m_ObjectHideFlags: 0

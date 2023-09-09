@@ -27,7 +27,7 @@ public class ProjectileBase : MonoBehaviour
 
                 if (damageble != null)
                 { 
-                    damageble.Damage(damageAmount); 
+                    damageble.IDamage(damageAmount); 
                 
                 }
                 break;

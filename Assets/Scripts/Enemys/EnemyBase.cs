@@ -48,16 +48,16 @@ namespace Enemy
             animationManager.PlayAnimationByTrigger(animationType);
         }
 
-        public void Damage(float damage)
+        public void IDamage(float damage)
         {
             OnDamage(damage);
         }
         public void OnCollisionEnter(Collision collision)
         {
-            Player p = collision.transform.GetComponent<Player>();
+            Health p = collision.transform.GetComponent<Health>();
             if(p = null)
             {
-                p.Damage(1);
+                p.IDamage(1);
             }
         }
     }

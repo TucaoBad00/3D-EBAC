@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageble
+public class Player : MonoBehaviour
 {
     [Header("MOVIMENTO")]
     public float speed;
@@ -12,7 +12,6 @@ public class Player : MonoBehaviour, IDamageble
     public float jumpSpeed;
     public CharacterController characterController;
     public Animator animator;
-    public Health health;
 
     private bool isWalking;
     private float vSpeed = 0f;
@@ -20,16 +19,12 @@ public class Player : MonoBehaviour, IDamageble
     private void Awake()
     {
         OnValidate();
-        //health.OnDamage += Damage;
     }
     private void OnValidate()
     {
-        if (health == null) health = GetComponent<Health>();
+        
     }
-    public void Damage(float damage)
-    {
-        throw new System.NotImplementedException();
-    }
+
 
     void Update()
     {
