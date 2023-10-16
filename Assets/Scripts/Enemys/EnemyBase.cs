@@ -5,7 +5,7 @@ using Animation;
 
 namespace Enemy
 {
-    public class EnemyBase : MonoBehaviour, IDamageble
+    public class EnemyBase : MonoBehaviour, IDamageable
     {
 
         public AnimationManager animationManager;

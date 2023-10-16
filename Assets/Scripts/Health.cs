@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour, IDamageble
+public class Health : MonoBehaviour, IDamageable
 {
     public float startLife = 10;
     public float _currentLife;

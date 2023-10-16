@@ -23,11 +23,11 @@ public class ProjectileBase : MonoBehaviour
             if (collision.transform.tag == t)
             {
                 
-                var damageble = collision.transform.GetComponent<IDamageble>();
+                var damageable = collision.transform.GetComponent<IDamageable>();
 
-                if (damageble != null)
+                if (damageable != null)
                 { 
-                    damageble.IDamage(damageAmount); 
+                    damageable.IDamage(damageAmount); 
                 
                 }
                 break;
