@@ -4,7 +4,7 @@ using UnityEngine;
 using Scripts.StateMachine;
 public class PlayerMoviment : MonoBehaviour
 {
-    public Rigidbody rigidbody;
+    public new Rigidbody rigidbody;
     public float speed;
     public StateMachine<MovimentStates> stateMachine = new StateMachine<MovimentStates>();
     public bool flying;
