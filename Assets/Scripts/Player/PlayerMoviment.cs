@@ -8,7 +8,6 @@ public class PlayerMoviment : MonoBehaviour
     public float speed;
     public StateMachine<MovimentStates> stateMachine = new StateMachine<MovimentStates>();
     public bool flying;
-    
     public enum MovimentStates
     {
         MOVING,
@@ -25,9 +24,12 @@ public class PlayerMoviment : MonoBehaviour
         rigidbody.GetComponent<Rigidbody>();
         stateMachine.RegisterState(MovimentStates.MOVING,new Moviment());
         //stateMachine.SwitchState(MovimentStates.IDLE);
+
+
     }
     public void Update()
     {
+        
         stateMachine.Update();
         StateController();
     }

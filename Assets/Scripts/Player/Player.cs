@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     public float jumpSpeed;
     public CharacterController characterController;
     public Animator animator;
-
+    public CheckPointManager checkPointManager;
+    public Health health;
     private bool isWalking;
     private float vSpeed = 0f;
 
@@ -28,7 +29,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0, Input.GetAxis("Horizontal")*rotateSpeed*Time.deltaTime, 0);
+        if(health.isAlive)
+        {
+            Move();
+        }
+
+    }
+    public void Move()
+    {
+        transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime, 0);
         var speedVector = transform.forward * Input.GetAxis("Vertical") * speed;
         //JUMP
         if (characterController.isGrounded)
@@ -40,7 +49,7 @@ public class Player : MonoBehaviour
             }
         }
         //WALKING
-        
+
         isWalking = Input.GetAxis("Vertical") != 0;
         if (isWalking)
         {
@@ -54,12 +63,20 @@ public class Player : MonoBehaviour
                 animator.speed = 1f;
             }
         }
-        
+
         vSpeed -= gravity * Time.deltaTime;
         speedVector.y = vSpeed;
         characterController.Move(speedVector * Time.deltaTime);
         //ANIMATION
         animator.SetBool("Run", Input.GetAxis("Vertical") != 0);
 
+    }
+    [NaughtyAttributes.Button]
+    public void Respawn()
+    {
+        if(checkPointManager.HasCheckPoint())
+        {
+            transform.position = checkPointManager.GetPositionFromLastCheckPoint();
+        }
     }
 }

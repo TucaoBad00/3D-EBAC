@@ -5,15 +5,29 @@ using System;
 
 public class CheckPoint : MonoBehaviour
 {
-    public Health health;
-    public Action die;
+    public int key = 0;
+    private bool activedCheck = false;
+    public CheckPointManager checkPointManager;
     public void Update()
     {
         
     }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        health = collision.gameObject.GetComponent<Health>();
+        if(!activedCheck && collision.gameObject.CompareTag("Player"))
+        {
+            check();
+        }
     }
-   
+
+    public void check()
+    {
+        SaveCheckPoint();
+    }
+    public void SaveCheckPoint()
+    {
+        /*if(PlayerPrefs.GetInt("CheckPointKey",0)>key)
+            PlayerPrefs.SetInt("CheckPointKey",key);*/
+        checkPointManager.SaveCheckPoint(key);
+    }
 }

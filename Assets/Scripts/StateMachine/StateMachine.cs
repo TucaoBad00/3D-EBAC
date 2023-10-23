@@ -36,7 +36,7 @@ namespace Scripts.StateMachine
         }
         public void Update()
         {
-            if (_currentState != null) _currentState.OnStateStay();
+            _currentState?.OnStateStay();
         }
     }
 }

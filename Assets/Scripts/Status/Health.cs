@@ -6,13 +6,18 @@ public class Health : MonoBehaviour, IDamageable
 {
     public float startLife = 10;
     public float _currentLife;
+    public bool isAlive = true;
+    public Player player;
 
     public Action<Health> onDamage;
     public Action<Health> OnKill;
+    public Action<Health> onRevive;
+
     public bool destroyOnKill = false;
+
     public Animator animator;
-    public bool isAlive = true;
-    public CheckPoint currentCheck;
+
+    public GameObject currentCheck;
     public void Awake()
     {
         Init();
@@ -23,45 +28,40 @@ public class Health : MonoBehaviour, IDamageable
     }
     protected virtual void Kill()
     {
-        if(isAlive) 
-            animator.SetBool("Death",true);
-
+        animator.SetBool("Death",true);
         isAlive = false;
-
         if(destroyOnKill)
             Destroy(gameObject, 1);
 
         OnKill?.Invoke(this);
-        Invoke("Respawn", 2);
+        Invoke("Respawn", 2.5f);
         
     }
     
     public void OnDamage(float f)
     {
-        _currentLife -= f;
-        if (_currentLife <= 0)
+        if (isAlive)
         {
-            Kill();
+            _currentLife -= f;
+            if (_currentLife <= 0)
+            {
+                Kill();
+            }
+            onDamage?.Invoke(this);
         }
-        onDamage?.Invoke(this);
     }
 
     public void IDamage(float damage)
     {
         OnDamage(damage);
     }
-    public void OnTriggerEnter(Collider collider)
-    {
-        if(collider.gameObject.CompareTag("CheckPoint"))
-        {
-            currentCheck = collider.gameObject.GetComponent<CheckPoint>();
-        }
-    }
+
     public void Respawn()
     {
-        transform.position = currentCheck.transform.position;
-        isAlive = true;
+        onRevive?.Invoke(this);
         _currentLife = startLife;
         animator.SetTrigger("Idle");
+        player.Respawn();
+        isAlive = true;
     }
 }
