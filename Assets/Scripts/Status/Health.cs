@@ -9,6 +9,7 @@ public class Health : MonoBehaviour, IDamageable
     public bool isAlive = true;
     public Player player;
     public EffectsManager effectsManager;
+    public ShakeEffect shakeEffect;
 
     public Action<Health> onDamage;
     public Action<Health> OnKill;
@@ -50,6 +51,7 @@ public class Health : MonoBehaviour, IDamageable
             }
             onDamage?.Invoke(this);
             effectsManager.ChangeVignette();
+            shakeEffect.Shake();
         }
     }
 
