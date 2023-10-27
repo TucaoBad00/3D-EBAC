@@ -8,7 +8,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     public InputAction shoot;
     public List<GunBase> gun;
     public int currentGun = 0;
-
+    public ShakeEffect shakeEffect;
     protected override void Init()
     {
 
@@ -45,7 +45,7 @@ public class PlayerAbilityShoot : PlayerAbilityBase
     private void StartShoot()
     {
         gun[currentGun].StartShoot();
-
+        shakeEffect.Shake();
     }
     private void CancelShoot()
     {

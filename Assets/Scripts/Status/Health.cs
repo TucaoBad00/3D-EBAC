@@ -8,6 +8,7 @@ public class Health : MonoBehaviour, IDamageable
     public float _currentLife;
     public bool isAlive = true;
     public Player player;
+    public EffectsManager effectsManager;
 
     public Action<Health> onDamage;
     public Action<Health> OnKill;
@@ -48,6 +49,7 @@ public class Health : MonoBehaviour, IDamageable
                 Kill();
             }
             onDamage?.Invoke(this);
+            effectsManager.ChangeVignette();
         }
     }
 
