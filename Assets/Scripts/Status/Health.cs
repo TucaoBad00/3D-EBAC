@@ -68,4 +68,8 @@ public class Health : MonoBehaviour, IDamageable
         player.Respawn();
         isAlive = true;
     }
+    public void ResetLife()
+    {
+        _currentLife = startLife;
+    }
 }
