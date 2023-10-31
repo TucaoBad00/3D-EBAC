@@ -12,7 +12,7 @@ public class Rifle : GunBase
     protected override IEnumerator ShootCoroutine()
     {
         if (reloding) yield break;
-        while (true)
+        while (!reloding)
         {
             if (currentBullets > 0)
             {

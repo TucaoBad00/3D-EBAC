@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public CheckPointManager checkPointManager;
     public Health health;
+    public KeyCode interact = KeyCode.E;
     private bool isWalking;
     private float vSpeed = 0f;
 
@@ -78,5 +79,17 @@ public class Player : MonoBehaviour
         {
             transform.position = checkPointManager.GetPositionFromLastCheckPoint();
         }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if(Input.GetKeyDown(interact))
+        {
+            var iinteractable = other.GetComponent<IInteractable>();
+            if(iinteractable!=null)
+            {
+                iinteractable.IInteract();
+            }
+        }
+
     }
 }
