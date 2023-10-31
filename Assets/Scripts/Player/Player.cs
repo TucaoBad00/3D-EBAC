@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public KeyCode interact = KeyCode.E;
     private bool isWalking;
     private float vSpeed = 0f;
+    public List<ParticleSystem> particles;
 
 
     private void Awake()
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
             vSpeed = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                particles[0].Play();
                 vSpeed = jumpSpeed;
             }
         }

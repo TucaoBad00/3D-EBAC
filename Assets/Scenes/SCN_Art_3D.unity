@@ -9686,7 +9686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756857700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21631624, y: 0.000000008399496, z: -0.0000000018610099, w: 0.97632337}
+  m_LocalRotation: {x: 0.21631624, y: -0.000000008399496, z: 0.0000000018610099, w: 0.97632337}
   m_LocalPosition: {x: 411.08002, y: -0.7600002, z: 26.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11655,7 +11655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950607100}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008024255, y: 0.9911081, z: -0.070754305, w: 0.11240169}
+  m_LocalRotation: {x: 0.008024255, y: 0.9911081, z: -0.07075428, w: 0.112401724}
   m_LocalPosition: {x: -0.81503296, y: 0.86976767, z: 8.484051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20122,7 +20122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500100153}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008024255, y: 0.9911081, z: -0.070754305, w: 0.11240169}
+  m_LocalRotation: {x: 0.008024255, y: 0.9911081, z: -0.07075428, w: 0.112401724}
   m_LocalPosition: {x: 411.08002, y: -3.1200001, z: 42.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20401,7 +20401,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -31249,6 +31249,14 @@ PrefabInstance:
       propertyPath: checkPointManager
       value: 
       objectReference: {fileID: 199222503}
+    - target: {fileID: 8370568975386614606, guid: eaa79b4f125fa8749ae6669eb8b2a640, type: 3}
+      propertyPath: particles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8370568975386614606, guid: eaa79b4f125fa8749ae6669eb8b2a640, type: 3}
+      propertyPath: particles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1503119981}
     - target: {fileID: 8663512854709786420, guid: eaa79b4f125fa8749ae6669eb8b2a640, type: 3}
       propertyPath: particle
       value: 
