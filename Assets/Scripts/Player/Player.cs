@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Skin;
 public class Player : MonoBehaviour
 {
     [Header("MOVIMENTO")]
@@ -14,9 +14,11 @@ public class Player : MonoBehaviour
     public Animator animator;
     public CheckPointManager checkPointManager;
     public Health health;
+    [SerializeField]private SkinChanger skinChanger;
     public KeyCode interact = KeyCode.E;
     private bool isWalking;
     private float vSpeed = 0f;
+
 
     private void Awake()
     {
@@ -91,5 +93,48 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+    public void ChangeSpeed(float speed, float duration)
+    {
+        StartCoroutine(ChangeSpeedCoroutine(speed,duration));
+    }
+    IEnumerator ChangeSpeedCoroutine(float localSpeed, float duration)
+    {
+        var defaultSpeed = speed;
+        speed = localSpeed;
+        yield return new WaitForSeconds(duration);
+        speed = defaultSpeed;
+    }
+    public void ChangeTexture(Skin.SkinSetup skinSetup, float duration)
+    {
+        StartCoroutine(ChangeTextureCoroutine(skinSetup, duration));
+    }
+    IEnumerator ChangeTextureCoroutine(Skin.SkinSetup skinSetup, float duration)
+    {
+        skinChanger.ChangeTexture(skinSetup);
+        yield return new WaitForSeconds(duration);
+        skinChanger.ResetTexture();
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.CompareTag("Enemy"))
+        {
+            var idamageable = collision.gameObject.GetComponent<IDamageable>();
+            if(doDamage)
+            {
+                idamageable.IDamage(2);
+            }
+        }
+    }
+    public void TouchDamage(float duration)
+    {
+        StartCoroutine(TouchDamageCoroutine(duration));
+    }
+    private bool doDamage;
+    IEnumerator TouchDamageCoroutine(float duration)
+    {
+        doDamage = true;
+        yield return new WaitForSeconds(duration);
+        doDamage = false;
     }
 }
