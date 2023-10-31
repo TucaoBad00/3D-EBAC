@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2404083491542908488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6055371975505639450}
+  m_Layer: 0
+  m_Name: Guns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6055371975505639450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404083491542908488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 541383515416874244}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4606854570561163503
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +151,7 @@ Transform:
   m_Children:
   - {fileID: 8054347588255582542}
   - {fileID: 3193655672860417334}
+  - {fileID: 6055371975505639450}
   - {fileID: 5670766908311603170}
   - {fileID: 5699656607171653889}
   - {fileID: 461654449082513742}
@@ -170,6 +202,10 @@ MonoBehaviour:
   jumpSpeed: 15
   characterController: {fileID: 5665942775858616484}
   animator: {fileID: 579254602555542590}
+  checkPointManager: {fileID: 0}
+  health: {fileID: 0}
+  skinChanger: {fileID: 0}
+  interact: 101
 --- !u!114 &932373334452172505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +240,7 @@ MonoBehaviour:
   - {fileID: 7242565749050600413}
   - {fileID: 8663512854709786420}
   currentGun: 0
+  shakeEffect: {fileID: 0}
 --- !u!114 &41819155069348808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,9 +255,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   _currentLife: 0
+  isAlive: 1
+  player: {fileID: 0}
+  effectsManager: {fileID: 0}
+  shakeEffect: {fileID: 0}
   destroyOnKill: 0
   animator: {fileID: 579254602555542590}
-  isAlive: 1
   currentCheck: {fileID: 0}
 --- !u!54 &3746857542859880271
 Rigidbody:

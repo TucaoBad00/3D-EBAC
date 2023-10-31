@@ -9,6 +9,7 @@ public class ChestBase : MonoBehaviour,IInteractable
     public GameObject notification;
     public ChestItemBase chestItem;
     public bool chestOpen = false;
+    public ParticleSystem particle;
     public void Start()
     {
         HideNotification();
@@ -18,6 +19,7 @@ public class ChestBase : MonoBehaviour,IInteractable
         if (chestOpen) return;
         animator.SetTrigger(triggerOpen);
         chestOpen = true;
+        particle.Play();
         Invoke("ShowItem", 1f);
     }
     private void ShowItem()

@@ -8,6 +8,7 @@ public class GunBase : MonoBehaviour
     public Transform positionToShoot;
     public float timeBetweenShoot;
     public float speed;
+    public ParticleSystem particle;
     private Coroutine _currentCoroutine;
     protected virtual IEnumerator ShootCoroutine()
     {
@@ -31,6 +32,7 @@ public class GunBase : MonoBehaviour
     public virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
+        particle.Play();
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speed = speed;
