@@ -14,7 +14,7 @@ public class ActionLifePack : MonoBehaviour
     }
     private void RecoverLife()
     {
-        if(soInt.Value > 0)
+        if(soInt.value > 0)
         {
             itensManager.RemoveByType(Itens.ItemType.LIFE_PACK);
             health.ResetLife();

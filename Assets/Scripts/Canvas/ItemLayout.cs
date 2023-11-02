@@ -23,7 +23,7 @@ namespace Itens
         }
         private void Update()
         {
-            uiValue.text = _currentSetup.soInt.Value.ToString();
+            uiValue.text = _currentSetup.soInt.value.ToString();
         }
     }
 }

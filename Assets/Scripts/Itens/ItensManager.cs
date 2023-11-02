@@ -13,17 +13,24 @@ namespace Itens
     public class ItensManager : MonoBehaviour
     {
         public List<ItemSetup> itemSetups;
+        public SaveManager saveManager;
 
         void Start()
         {
             Reset();
+            LoadItensFromSave();
+        }
+        public void LoadItensFromSave()
+        {
+            AddByType(ItemType.COIN, saveManager.Setup.coins);
+            AddByType(ItemType.LIFE_PACK, saveManager.Setup.health);
         }
 
         private void Reset()
         {
             foreach(var i in itemSetups)
             {
-                i.soInt.Value = 0;
+                i.soInt.value = 0;
             }
         }
         public ItemSetup GetItemByType(ItemType itemType)
@@ -33,14 +40,14 @@ namespace Itens
         public void AddByType(ItemType itemType, int amount =1)
         {
             if (amount < 0) return;
-            itemSetups.Find(i => i.itemType == itemType).soInt.Value += amount;
+            itemSetups.Find(i => i.itemType == itemType).soInt.value += amount;
         }
         public void RemoveByType(ItemType itemType, int amount = 1)
         {
             //if (amount < 0) return;
             var item = itemSetups.Find(i => i.itemType == itemType);
-            item.soInt.Value -= amount;
-            if (item.soInt.Value < 0) item.soInt.Value = 0;
+            item.soInt.value -= amount;
+            if (item.soInt.value < 0) item.soInt.value = 0;
         }
     }
 

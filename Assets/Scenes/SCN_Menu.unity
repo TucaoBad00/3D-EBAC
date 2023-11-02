@@ -3890,6 +3890,7 @@ GameObject:
   - component: {fileID: 1821545647}
   - component: {fileID: 1821545646}
   - component: {fileID: 1821545645}
+  - component: {fileID: 1821545648}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -3961,7 +3962,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1821545648}
         m_TargetAssemblyTypeName: SceneLoadHelper, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
@@ -4011,6 +4012,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821545643}
   m_CullTransparentMesh: 1
+--- !u!114 &1821545648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821545643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdffae04fc4e9749ac7e70ed24730f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1849393367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,6 +4223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1936507238}
+  - component: {fileID: 1936507237}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -4217,6 +4231,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1936507237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936507236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b326cc9246ccd449f9caea28c9d267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveSetup:
+    coins: 0
+    health: 0
+    lastLevel: 0
+    playerName: 
+    qualquer: 
+  health: {fileID: 0}
+  itensManager: {fileID: 0}
+  lastLevel: 0
 --- !u!4 &1936507238
 Transform:
   m_ObjectHideFlags: 0

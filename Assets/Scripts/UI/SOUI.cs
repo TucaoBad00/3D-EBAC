@@ -8,13 +8,13 @@ public class SOUI : MonoBehaviour
     public TextMeshProUGUI text;
     void Start()
     {
-        text.text = count.Value.ToString();
-        count.Value = 0;
+        text.text = count.value.ToString();
+        count.value = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = count.Value.ToString();
+        text.text = count.value.ToString();
     }
 }

@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class SOint : ScriptableObject
 {
-    public int Value;
+    public int value;
 }

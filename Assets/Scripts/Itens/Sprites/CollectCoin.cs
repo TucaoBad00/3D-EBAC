@@ -33,7 +33,7 @@ public class CollectCoin : MonoBehaviour
             if (coinCollected != null) { coinCollected.Play(); }
             itensManager.AddByType(Itens.ItemType.COIN);
             Destroy(gameObject);
-            CoinCount.Value += 1;
+            CoinCount.value += 1;
         }
     }
 }

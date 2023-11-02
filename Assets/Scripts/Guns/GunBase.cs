@@ -32,7 +32,7 @@ public class GunBase : MonoBehaviour
     public virtual void Shoot()
     {
         var projectile = Instantiate(prefabProjectile);
-        particle.Play();
+        if(particle!=null)particle.Play();
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;
         projectile.speed = speed;
