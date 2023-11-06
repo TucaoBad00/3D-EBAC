@@ -203,9 +203,10 @@ MonoBehaviour:
   characterController: {fileID: 5665942775858616484}
   animator: {fileID: 579254602555542590}
   checkPointManager: {fileID: 0}
-  health: {fileID: 0}
+  health: {fileID: 41819155069348808}
   skinChanger: {fileID: 0}
   interact: 101
+  particles: []
 --- !u!114 &932373334452172505
 MonoBehaviour:
   m_ObjectHideFlags: 0

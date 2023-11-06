@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using Core.Singleton;
 namespace Itens
 {
     public enum ItemType
@@ -10,10 +10,9 @@ namespace Itens
         COIN,
         LIFE_PACK
     }
-    public class ItensManager : MonoBehaviour
+    public class ItensManager : Singleton<ItensManager>
     {
         public List<ItemSetup> itemSetups;
-        public SaveManager saveManager;
 
         void Start()
         {
@@ -22,8 +21,8 @@ namespace Itens
         }
         public void LoadItensFromSave()
         {
-            AddByType(ItemType.COIN, saveManager.Setup.coins);
-            AddByType(ItemType.LIFE_PACK, saveManager.Setup.health);
+            AddByType(ItemType.COIN, SaveManager.Instance.Setup.coins);
+            AddByType(ItemType.LIFE_PACK, SaveManager.Instance.Setup.health);
         }
 
         private void Reset()

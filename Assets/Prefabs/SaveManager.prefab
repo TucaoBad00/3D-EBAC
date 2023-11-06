@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &237027734555137391
+--- !u!1 &8904149080223606314
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4372136636247506655}
-  - component: {fileID: 8836868758321628934}
+  - component: {fileID: 6396814903756676266}
+  - component: {fileID: 1446023154663916283}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4372136636247506655
+--- !u!4 &6396814903756676266
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237027734555137391}
+  m_GameObject: {fileID: 8904149080223606314}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.7203, y: 62.717205, z: -48.902283}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.611601, y: -1.3401443, z: 86.10127}
+  m_LocalScale: {x: 0.22819687, y: 0.16565914, z: 0.27646458}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8836868758321628934
+--- !u!114 &1446023154663916283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237027734555137391}
+  m_GameObject: {fileID: 8904149080223606314}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66b326cc9246ccd449f9caea28c9d267, type: 3}
@@ -50,6 +50,6 @@ MonoBehaviour:
     lastLevel: 0
     playerName: 
     qualquer: 
-  health: {fileID: 0}
-  itensManager: {fileID: 0}
+  health: {fileID: 41819155069348808, guid: eaa79b4f125fa8749ae6669eb8b2a640, type: 3}
+  itensManager: {fileID: 4642496025512319361, guid: 1349910f83dec4b4491d339ee38471b5, type: 3}
   lastLevel: 0

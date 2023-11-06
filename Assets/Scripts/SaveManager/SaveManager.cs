@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using Core.Sigleton;
+using Core.Singleton;
+using Itens;
 using System;
 public class SaveManager : Singleton<SaveManager>
 {
@@ -10,7 +11,7 @@ public class SaveManager : Singleton<SaveManager>
     private SaveSetup _saveSetup;
 
     public Health health;
-    public Itens.ItensManager itensManager;
+
 
     public int lastLevel;
 
@@ -52,8 +53,8 @@ public class SaveManager : Singleton<SaveManager>
     }
     public void SaveItens()
     {
-        _saveSetup.coins = (int)itensManager.GetItemByType(Itens.ItemType.COIN).soInt.value;
-        _saveSetup.health = (int)itensManager.GetItemByType(Itens.ItemType.LIFE_PACK).soInt.value;
+        _saveSetup.coins = (int)ItensManager.Instance.GetItemByType(Itens.ItemType.COIN).soInt.value;
+        _saveSetup.health = (int)ItensManager.Instance.GetItemByType(Itens.ItemType.LIFE_PACK).soInt.value;
         Save();
     }
     public void SaveName(string text)
@@ -92,8 +93,8 @@ public class SaveManager : Singleton<SaveManager>
             CreateNewSave();
             Save();
         }
-        FileLoaded.Invoke(_saveSetup);
-
+        FileLoaded?.Invoke(_saveSetup);
+       
     }
 
 

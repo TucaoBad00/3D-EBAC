@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Skin;
-public class Player : MonoBehaviour
+using Core.Singleton;
+public class Player : Singleton<Player>
 {
     [Header("MOVIMENTO")]
     public float speed;
@@ -21,8 +22,9 @@ public class Player : MonoBehaviour
     public List<ParticleSystem> particles;
 
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         OnValidate();
     }
     private void OnValidate()

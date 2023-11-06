@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Core.Sigleton;
+using Core.Singleton;
+
 public class CheckPointManager : Singleton<CheckPointManager>
 {
     public int lastCheckPoint = 0;

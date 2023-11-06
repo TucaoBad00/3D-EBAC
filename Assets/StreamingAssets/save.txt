@@ -1,0 +1,7 @@
+{
+    "coins": 25,
+    "health": 0,
+    "lastLevel": 0,
+    "playerName": "Arthur",
+    "qualquer": ""
+}

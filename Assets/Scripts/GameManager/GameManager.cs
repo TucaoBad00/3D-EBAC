@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Core.Sigleton;
 using Scripts.StateMachine;
+using Core.Singleton;
 public class GameManager : Singleton<GameManager>
 {
     public enum GameStates

@@ -10,6 +10,7 @@ public class ChestBase : MonoBehaviour,IInteractable
     public ChestItemBase chestItem;
     public bool chestOpen = false;
     public ParticleSystem particle;
+    public new AudioSource audio;
     public void Start()
     {
         HideNotification();
@@ -18,9 +19,10 @@ public class ChestBase : MonoBehaviour,IInteractable
     {
         if (chestOpen) return;
         animator.SetTrigger(triggerOpen);
-        chestOpen = true;
         particle.Play();
+        audio.Play();
         Invoke("ShowItem", 1f);
+        chestOpen = true;
     }
     private void ShowItem()
     {
@@ -39,7 +41,7 @@ public class ChestBase : MonoBehaviour,IInteractable
         {
             ShowNotification();
         }
-
+        SaveManager.Instance.SaveItens();
     }
     private void OnTriggerExit(Collider other)
     {
