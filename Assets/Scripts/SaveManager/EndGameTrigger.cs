@@ -6,7 +6,6 @@ using DG.Tweening;
 public class EndGameTrigger : MonoBehaviour
 {
     public List<GameObject> endGameObjects;
-    public SaveManager saveManager;
     private bool _endGame;
 
     public int currentLevel = 1;
@@ -21,9 +20,9 @@ public class EndGameTrigger : MonoBehaviour
         
         if(!_endGame && other.CompareTag("Player"))
         {
+            _endGame = true;
             ShowEndGame();
         }
-        _endGame = true;
 
     }
 
@@ -35,7 +34,7 @@ public class EndGameTrigger : MonoBehaviour
         {
             i.SetActive(true);
             i.transform.DOScale(0,.2f).SetEase(Ease.OutBack).From();
-            saveManager.SaveLastLevel(currentLevel);
+            SaveManager.Instance.SaveLastLevel(currentLevel);
         }
     }
 }

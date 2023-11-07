@@ -36,12 +36,12 @@ public class ChestBase : MonoBehaviour,IInteractable
 
     public void OnTriggerEnter(Collider other)
     {
-        Player p = other.GetComponent<Player>();
-        if(p != null)
+        
+        if(other.transform.CompareTag("Player"))
         {
+            SaveManager.Instance.SaveItens();
             ShowNotification();
         }
-        SaveManager.Instance.SaveItens();
     }
     private void OnTriggerExit(Collider other)
     {
